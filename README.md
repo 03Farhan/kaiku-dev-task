@@ -10,9 +10,9 @@
    `> cd kaiku-dev-task`
 2. Install dependencies.  
    `> npm install`
-3. Start the mock backend.
+3. Start the mock backend.  
    `> npm run server`
-4. Open a new terminal and start the frontend.
+4. Open a new terminal and start the frontend.  
    `> npm run start`
 
 ## Using the project
