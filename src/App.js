@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import IncomingStartups from "./pages/IncomingStartups";
+import OnboardStartups from "./pages/OnboardStartups";
 
-function App() {
+const data = require("./data/data.json");
+console.log(data);
+
+const App = () => {
+  const [currentPage, setCurrentPage] = useState("onboard");
+
+  let page;
+  if (currentPage === "onboard") {
+    page = <OnboardStartups />;
+  } else if (currentPage === "incoming") {
+    page = <IncomingStartups />;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="app">
+      <div className="app-navbar">
+        <h1>Kaiku Dev Challenge</h1>
+        <div
+          className={
+            currentPage === "onboard"
+              ? "navbar-link navbar-link-active"
+              : "navbar-link"
+          }
+          onClick={() => setCurrentPage("onboard")}
         >
-          Learn React
-        </a>
-      </header>
+          Onboard Startups
+        </div>
+        <div
+          className={
+            currentPage === "incoming"
+              ? "navbar-link navbar-link-active"
+              : "navbar-link"
+          }
+          onClick={() => setCurrentPage("incoming")}
+        >
+          Incoming Startups
+        </div>
+      </div>
+      {page}
     </div>
   );
-}
+};
 
 export default App;
