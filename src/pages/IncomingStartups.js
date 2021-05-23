@@ -86,7 +86,7 @@ const IncomingStartups = () => {
               productHighlights={startupSelected.productHighlights}
             />
           </div>
-          <img src={startupSelected.logoUrl}></img>
+          <img src={startupSelected.logoUrl} alt="company logo"></img>
         </div>
         <div className="incoming-footer">
           <h3 style={{ textAlign: "center" }}>Meet the Team:</h3>
